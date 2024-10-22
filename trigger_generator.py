@@ -114,6 +114,7 @@ def process_csv(input_file, output_file):
         row[4] = replace_sequences(row[4])  # Columna 5
         row[5] = replace_sequences(row[5])  # Columna 6
         row[6] = replace_sequences(row[6])  # Columna 7
+        row[6] = replace_sequences(row[8])  # Columna 9
 
     # Escribir el CSV modificado en un nuevo archivo
     with open(output_file, mode='w', newline='', encoding='utf-8') as csvfile:

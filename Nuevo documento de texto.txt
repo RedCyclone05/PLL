@@ -1,0 +1,6 @@
+https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=pll&view=plan&bg=t&case=U&ac=grey&arw=U8U0-s8,U0U2-s8,U2U8-s8
+
+
+arw=U8U0-s8,U0U2-s8,U2U8-s8
+U8U0 = CAPA Pieza inicio Capa Pieza final
+-8 = escala para alejarse del centro

@@ -49,13 +49,13 @@ def process_text(text):
 
     return processed_text
 
-# Procesar cada fila en la columna 4 (índice 3) y escribir en la columna 8 (índice 7)
+# Procesar cada fila en la columna 4 (índice 3) y escribir en la columna 9 (índice 8)
 if len(df.columns) > 3:
-    df[7] = df[3].apply(process_text)
+    df[8] = df[3].apply(process_text)
 
     # Asignar "Set Up" al primer elemento de la columna 10
     if not df.empty:
-        df.at[0, 7] = "Set Up"
+        df.at[0, 8] = "Set Up"
 
     # Guardar el DataFrame modificado en el archivo CSV
     df.to_csv('DataBase.csv', index=False, header=False)

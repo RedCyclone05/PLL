@@ -6,7 +6,7 @@ import os
 csv_file_path = 'DataBase.csv'
 
 # Enlace base
-base_url = "https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=oll&view=plan&bg=t"
+base_url = "https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=pll&view=plan&bg=t"
 
 # Crear un directorio para guardar las imágenes si no existe
 output_dir = 'downloaded_images'
@@ -25,13 +25,14 @@ with open(csv_file_path, newline='') as csvfile:
             # Obtener los valores de las columnas necesarias
             columna_4_valor = row[3]  # algoritmo
             columna_3_nombre = row[2]  # Nombre
+            columna_8_arrrow = row[7] # Flecha
 
             # Verificar si la columna 6 contiene "Main Algorithm" o "It's ready"
             if "Main Algorithm" in columna_4_valor:
                 columna_4_valor = "D"  # Modificar el algoritmo a "U"
             
             # Generar el enlace con la variación de stage
-            enlace = f"{base_url}&case={columna_4_valor}"
+            enlace = f"{base_url}&case={columna_4_valor}&arw={columna_8_arrrow}"
             
             # Depuración: imprimir el enlace generado
             print(f"Enlace generado: {enlace}")

@@ -14,7 +14,7 @@ pdfmetrics.registerFont(TTFont('Montserrat', 'Montserrat-Regular.ttf'))
 pdfmetrics.registerFont(TTFont('Montserrat-Medium', 'Montserrat-Medium.ttf'))
 
 # Crear un documento PDF
-pdf_file = "OLL_cases.pdf"
+pdf_file = "PLL_cases.pdf"
 document = SimpleDocTemplate(
     pdf_file, 
     pagesize=letter,
@@ -72,7 +72,7 @@ def create_2x1_table(image_path, set_up_lines, name_lines, text_lines):
 content = []
 
 # Título
-title = Paragraph("OLL", title_style)
+title = Paragraph("PLL", title_style)
 content.append(title)
 
 # Nombre
@@ -98,7 +98,7 @@ with open(csv_file, mode='r') as file:
             image_filename = row[1]  # La segunda columna contiene el nombre de la imagen
             name_lines = row[2:3]  # La tercera columna tiene el nombre
             text_lines = row[3:6]  # Las celdas de la 4 a la 6 se consideran líneas de texto
-            set_up_lines = row[6:7] # La decima columna tiene el Set Up
+            set_up_lines = row[8:9] # La decima columna tiene el Set Up
 
 
             # Construir la ruta completa de la imagen
@@ -127,7 +127,7 @@ suggestion_style = ParagraphStyle(name='SuggestionText', fontName='Montserrat', 
 suggestion_paragraph = Paragraph(
     """
     <font name="Montserrat" size="12">
-    My suggestion is to learn the first algorithm for each case. If you don't like it, use the second one, and if you don’t like the second one, use the third. I recommend that you learn one per day following the order presented in this PDF. Learn it with the triggers, which are those small movements in parentheses, and practice it many times until you master it.
+    My suggestion is to learn the first algorithm for each PLL case. I recommend starting with the T Permutation case, followed by the cases of Permutations of Edges Only. Then, learn the Y Permutation, the A's, the J's, and for the remaining cases, follow the order presented in this PDF. For the U cases, it's advisable to learn an alternative from a different angle, which is included in the PDF. It's important to learn the G's until the very end. Practice each case with the triggers, which are those small movements in parentheses, and practice many times until you master it.
     </font>
     """, 
     suggestion_style
@@ -143,12 +143,12 @@ content.append(Paragraph("Referencias", subtitle_style))
 # Lista de referencias con solo el link cliqueable, en azul y subrayado
 referencias = [
     'VisualCube: Generate custom Rubik\'s cube visualisations from your browser address bar: <a href="https://cube.rider.biz/visualcube.php" color="blue"><u>https://cube.rider.biz/visualcube.php</u></a>',
-    'VisualCube: Cube image in each algorithm: <a href="https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=oll&view=plan&bg=t&case=D" color="blue"><u>https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=oll&view=plan&bg=t&case=D</u></a>',
-    'SpeedCubeDB: OLL Algorithms: <a href="https://speedcubedb.com/a/3x3/OLL" color="blue"><u>https://speedcubedb.com/a/3x3/OLL</u></a>',
-    'CubeSkills: OLL Cases: <a href="https://www.cubeskills.com/tutorials/oll-algorithms" color="blue"><u>https://www.cubeskills.com/tutorials/oll-algorithms</u></a>',
-    'CubeHead: How to Learn Full OLL in ONE MONTH (easy)  <a href="https://www.youtube.com/watch?v=Ysy1S8ADzqw&t=230s" color="blue"><u>https://www.youtube.com/watch?v=Ysy1S8ADzqw&t=230s</u></a>',
-    'CubeHead: Full OLL: Algorithms & Finger Tricks [My Algs 2024]  <a href="https://www.youtube.com/watch?v=Q947zZRYMdg&t=10s" color="blue"><u>https://www.youtube.com/watch?v=Q947zZRYMdg&t=10s</u></a>',
-    'GitHub: Repository with which the images and this document were created: <a href="https://github.com/RedCyclone05/OLL" color="blue"><u>https://github.com/RedCyclone05/OLL</u></a>'
+    'VisualCube: Cube image in each algorithm: <a href="https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=pll&view=plan&bg=t&case=U&ac=grey&arw=U8U0-s8,U0U2-s8,U2U8-s8" color="blue"><u>https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=pll&view=plan&bg=t&case=U&ac=grey&arw=U8U0-s8,U0U2-s8,U2U8-s8</u></a>',
+    'SpeedCubeDB: PLL Algorithms: <a href="https://speedcubedb.com/a/3x3/PLL" color="blue"><u>https://speedcubedb.com/a/3x3/PLL</u></a>',
+    'CubeSkills: PLL Cases: <a href="https://www.cubeskills.com/tutorials/pll-algorithms" color="blue"><u>https://www.cubeskills.com/tutorials/pll-algorithms</u></a>',
+    'CubeHead: Full PLL: Algs & Finger Tricks [My Algs 2024]  <a href="https://www.youtube.com/watch?v=QVXKNAjl_0k&t=574s" color="blue"><u>https://www.youtube.com/watch?v=QVXKNAjl_0k&t=574s</u></a>',
+    'CubeHead: 10 Crazy PLL Algs You Should Try!  <a href="https://www.youtube.com/watch?v=E5G4cPg4knw&t=433s" color="blue"><u>https://www.youtube.com/watch?v=E5G4cPg4knw&t=433s</u></a>',
+    'GitHub: Repository with which the images and this document were created: <a href="https://github.com/RedCyclone05/PLL" color="blue"><u>https://github.com/RedCyclone05/PLL</u></a>'
 ]
 
 # Agregar cada referencia como un bullet con enlace cliqueable
